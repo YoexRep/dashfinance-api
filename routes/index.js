@@ -26,7 +26,7 @@ const router = Router();
 
 
 //Micartera
-const {getTablas} = require('../controllers/micartera.controller')
-router.get('/getTablas', getTablas);
+const {getMiCartera} = require('../controllers/micartera.controller')
+router.get('/getMiCartera/:id', getMiCartera);
 
 module.exports = router;

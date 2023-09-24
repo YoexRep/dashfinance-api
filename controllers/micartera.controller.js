@@ -5,12 +5,20 @@ const ConexionBD = require('../util/conexionbd');
 const pool = ConexionBD.GetBdPool();
 
 
-const getTablas = async (req, res) => {
- 
-  const response = await pool.query('SELECT "HOLAMUNDO" as Result');
+
+const getMiCartera = async (req, res) => {
+  const id = parseInt(req.params.id);
+  const response = await pool.query('SELECT * FROM micartera where id_usuario = $1', [id]);
   res.json(response.rows);
-  console.log(response) 
+
 };
+
+
+module.exports = {
+  getMiCartera
+ 
+}
+
 
 
 
@@ -138,9 +146,4 @@ const getTablas = async (req, res) => {
 
 
 
-
-module.exports = {
-  getTablas
- 
-}
 
