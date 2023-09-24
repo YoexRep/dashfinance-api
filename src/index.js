@@ -1,3 +1,5 @@
+require('dotenv').config(); //Para poder utilizar las variables de entorno
+
 const express = require('express'); //Para utilizar el servidor de express
 //var cors = require('cors');
 
@@ -24,7 +26,7 @@ app.use(express.urlencoded({extended: false})); //Esto es para que el servidor e
 app.use(require('../routes/index'));
 
  
-const Puerto = 5000; 
+const Puerto = process.env.PORT || 5000; 
 
 
 

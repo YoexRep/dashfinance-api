@@ -4,7 +4,8 @@
   "description": "Este es el API REST del sistema de dash finance",
   "main": "index.js",
   "scripts": {
-    "API": "nodemon src/index.js"
+    "API": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,10 +15,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
-    "mysql2": "^3.6.1",
-    "pg": "^8.7.1",
-    "set-tz": "^0.2.0",
-    "tzdata": "^1.0.30"
+    "pg": "^8.7.1"
+    
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
