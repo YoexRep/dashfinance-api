@@ -13,9 +13,17 @@ const getMiCartera = async (req, res) => {
 
 };
 
+const getMicarteraUsuarioDos = async (req, res) => {
+
+  const response = await pool.query('SELECT * FROM micartera where id_usuario = 2');
+  res.json(response.rows);
+
+};
+
 
 module.exports = {
-  getMiCartera
+  getMiCartera,
+  getMicarteraUsuarioDos
  
 }
 
