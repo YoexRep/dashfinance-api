@@ -16,8 +16,8 @@ const whitelist = [
   "https://dashfinance-api-production.up.railway.app",
 ]; // Solo los dominios que ponga aqui en mi white list podran hacer peticiones a mi api
 
-app.use(cors({ origin: whitelist }));
-//app.use(cors()); // Si no le indico un whilelist, la api permitira todas las peticiones de cualquier origen
+//app.use(cors({ origin: whitelist }));
+app.use(cors()); // Si no le indico un whilelist, la api permitira todas las peticiones de cualquier origen
 
 // UTC +00:00
 //console.log(new Date());
