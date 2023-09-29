@@ -11,7 +11,7 @@ const getMiCartera = async (req, res) => {
 };
 
 const setMiCartera = async (req, res) => {
-  const { tipo, criptomoneda, cantidad, precio } = req.body;
+  const { tipo, criptomoneda, cantidad, precio, id_usuario } = req.body;
 
   try {
     await pool.query("BEGIN");
@@ -19,8 +19,8 @@ const setMiCartera = async (req, res) => {
     //Intruccion
 
     const response = await pool.query(
-      'INSERT INTO "public".micartera ( tipo, criptomoneda, cantidad, precio  ) VALUES ($1, $2, $3, $4) RETURNING f_id',
-      [tipo, criptomoneda, cantidad, precio]
+      'INSERT INTO "public".micartera ( tipo, criptomoneda, cantidad, precio, id_usuario  ) VALUES ($1, $2, $3, $4, $5) RETURNING f_id',
+      [tipo, criptomoneda, cantidad, precio, id_usuario]
     );
 
     if (response.rowCount > 0) {
