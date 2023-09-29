@@ -2,11 +2,9 @@
 
 //Necesito un objeto de express para trabajar con las rutas (Router)
 
-
-const {Router} = require('express');
+const { Router } = require("express");
 
 const router = Router();
-
 
 // router.post('/CreateAlmacen', CreateAlmacen);
 
@@ -21,13 +19,14 @@ const router = Router();
 // router.get('/getUbicacionesVsAlmacen/:id', getUbicacionesVsAlmacen);
 // router.delete('/DeleteUbicaciones_vs_almacen/:id', DeleteUbicaciones_vs_almacen);
 
-
 // router.put('/UpdateUbiacionesVsAlmacen/:id', UpdateUbiacionesVsAlmacen);
 
-
 //Micartera
-const {getMiCartera,getMicarteraUsuarioDos} = require('../controllers/micartera.controller')
-router.get('/getMiCartera/:id', getMiCartera);
-router.get('/getMicarteraUsuarioDos', getMicarteraUsuarioDos);
+const {
+  getMiCartera,
+  setMiCartera,
+} = require("../controllers/micartera.controller");
+router.get("/getMiCartera/:id", getMiCartera);
+router.post("/setMiCartera", setMiCartera);
 
 module.exports = router;
