@@ -6,7 +6,7 @@ module.exports = {
 
         const { Pool} = require('pg'); //Export desde el driver pg, el objeto Pool, para hacer peticiones a la base de datos.
 
-
+    
         //Aqui instacion el pool, y le paso los datos de conexion a la bd
         const pool = new Pool ({
             host: process.env.DB_HOST,
@@ -18,7 +18,8 @@ module.exports = {
         
         });
 
-       
+
+       console.log(pool)
 
        return pool;
 

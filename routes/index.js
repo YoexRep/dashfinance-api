@@ -25,8 +25,11 @@ const router = Router();
 const {
   getMiCartera,
   setMiCartera,
+  ping
 } = require("../controllers/micartera.controller");
 router.get("/getMiCartera/:id", getMiCartera);
+router.get("/ping", ping);
+
 router.post("/setMiCartera", setMiCartera);
 
 module.exports = router;

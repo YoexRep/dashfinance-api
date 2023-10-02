@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false })); //Esto es para que el servidor
 
 const whitelist = [
   "http://localhost:3000/",
+  "http://localhost:5000/",
   "https://dashfinance-api-production.up.railway.app",
 ]; // Solo los dominios que ponga aqui en mi white list podran hacer peticiones a mi api
 

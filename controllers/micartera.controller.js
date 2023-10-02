@@ -1,6 +1,17 @@
 const ConexionBD = require("../util/conexionbd");
 const pool = ConexionBD.GetBdPool();
 
+const ping = async (err, res) => {
+ console.log("Entro antes de hacer ping");
+  const response = await pool.query("SELECT 1 as Result" );
+  if (err) {
+    console.error('Error al hacer ping a la base de datos:', err);
+  } else {
+    console.log('Conexión exitosa a la base de datos');
+  }
+  res.json(response.rows);
+};
+
 const getMiCartera = async (req, res) => {
   const id = parseInt(req.params.id);
   const response = await pool.query(
@@ -13,6 +24,7 @@ const getMiCartera = async (req, res) => {
 const setMiCartera = async (req, res) => {
   const { tipo, criptomoneda, cantidad, precio, id_usuario } = req.body;
 
+    console.log("llamo a este set "+criptomoneda);
   try {
     await pool.query("BEGIN");
 
@@ -39,6 +51,7 @@ const setMiCartera = async (req, res) => {
 module.exports = {
   getMiCartera,
   setMiCartera,
+  ping
 };
 
 // const CreateConfigAlmacen = async (req, res) => {
