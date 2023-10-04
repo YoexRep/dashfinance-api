@@ -19,8 +19,7 @@ module.exports = {
         });
 
 
-       console.log(pool)
-
+ 
        return pool;
 
 

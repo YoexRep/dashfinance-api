@@ -12,8 +12,8 @@ app.use(express.json()); //Esto es para que el servidor entienda los formatos JS
 app.use(express.urlencoded({ extended: false })); //Esto es para que el servidor entienda tambien los formularios enviados. el atributo extended es para que no se acepte imagenes, solo texto plano
 
 const whitelist = [
-  "http://localhost:3000/",
-  "http://localhost:5000/",
+  "http://localhost:3000",
+  "http://localhost:5000",
   "https://dashfinance-api-production.up.railway.app",
 ]; // Solo los dominios que ponga aqui en mi white list podran hacer peticiones a mi api
 
