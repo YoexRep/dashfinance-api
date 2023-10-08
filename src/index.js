@@ -11,14 +11,14 @@ app.use(express.json({ limit: "500mb" }));
 app.use(express.json()); //Esto es para que el servidor entienda los formatos JSON.
 app.use(express.urlencoded({ extended: false })); //Esto es para que el servidor entienda tambien los formularios enviados. el atributo extended es para que no se acepte imagenes, solo texto plano
 
-const whitelist = [
+/*const whitelist = [
   "http://localhost:3000",
   "http://localhost:5000",
   "https://dashfinance-api-production.up.railway.app",
 ]; // Solo los dominios que ponga aqui en mi white list podran hacer peticiones a mi api
-
-app.use(cors({ origin: whitelist }));
-//app.use(cors()); // Si no le indico un whilelist, la api permitira todas las peticiones de cualquier origen
+*/
+//app.use(cors({ origin: whitelist }));
+app.use(cors()); // Si no le indico un whilelist, la api permitira todas las peticiones de cualquier origen
 
 // UTC +00:00
 //console.log(new Date());
