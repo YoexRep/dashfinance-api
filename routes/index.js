@@ -32,4 +32,14 @@ router.get("/ping", ping);
 
 router.post("/setMiCartera", setMiCartera);
 
+
+//Activos
+const {
+  getActivos
+} = require("../controllers/activos.controller");
+router.get("/getActivos/:id", getActivos);
+
+
+
+
 module.exports = router;

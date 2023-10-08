@@ -14,7 +14,7 @@ const ping = async (err, res) => {
 const getMiCartera = async (req, res) => {
   const id = parseInt(req.params.id);
   const response = await pool.query(
-    "SELECT * FROM micartera3 where id_usuario = $1",
+    "SELECT * FROM micartera where id_usuario = $1",
     [id]
   );
   res.json(response.rows);
@@ -30,7 +30,7 @@ const setMiCartera = async (req, res) => {
     //Intruccion
 
     const response = await pool.query(
-      'INSERT INTO "public".micartera3 ( tipo, criptomoneda, cantidad, precio_compra, id_usuario, comision  ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id',
+      'INSERT INTO "public".micartera ( tipo, criptomoneda, cantidad, precio_compra, id_usuario, comision  ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id',
       [tipo, criptomoneda, cantidad, precio_compra, id_usuario, comision]
     );
 
