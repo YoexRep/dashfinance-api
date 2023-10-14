@@ -1,1 +1,1 @@
-Este es el API REST de dashfinance
+Este es el API REST de dashfinance.
